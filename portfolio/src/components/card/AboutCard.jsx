@@ -70,12 +70,12 @@ function AboutCard() {
             style={{ transform: "translateZ(40px)" }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <Link to="/projects">
+            <Link to="/Projects">
               <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all hover:scale-105 shadow-lg">
                 View My Work
               </button>
             </Link>
-            <Link to="/contact">
+            <Link to="/Contact">
               <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all hover:scale-105 shadow-lg">
                 Let's Connect
               </button>

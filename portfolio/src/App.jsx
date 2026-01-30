@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import Navbar from './components/navbar/Navbar';
+
 import AboutCard from './components/card/AboutCard';
-import About from './pages/About';
-import Skills from './pages/Skills';
 import FooterOne from './components/footer/FooterOne';
+import Navbar from './components/navbar/Navbar';
+import Home from './pages/Home';
+import { Outlet } from 'react-router';
+import About from './pages/About';
 
 function App() {
  
  
   return (
     <>
-      
-      <FooterOne />
+    <Navbar />
+      <Outlet />
+    <FooterOne />
+
     </>
   );
 }

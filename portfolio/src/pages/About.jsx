@@ -14,7 +14,7 @@ function About() {
               About Me
             </h2>
             <h1 className="text-5xl font-extrabold leading-tight">
-              <strong>Namaste</strong>
+              <strong>Namaste 🙏🏻</strong>
               <br /> I'm{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-rose-400">
                 Devendra Singh

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 function FooterOne() {
   return (
@@ -10,22 +11,27 @@ function FooterOne() {
       }}
     >
       <nav className="grid grid-flow-col gap-6 font-mono text-sm tracking-widest uppercase">
-        <a className="link link-hover hover:text-blue-400 transition-colors">
+        <Link
+          className="link link-hover hover:text-blue-400 transition-colors"
+          to="/Projects"
+        >
           Projects
-        </a>
-        <a className="link link-hover hover:text-blue-400 transition-colors">
+        </Link>
+        <Link className="link link-hover hover:text-blue-400 transition-colors">
           Skills
-        </a>
-        <a className="link link-hover hover:text-blue-400 transition-colors">
+        </Link>
+        <Link
+          to="/Contact"
+          className="link link-hover hover:text-blue-400 transition-colors"
+        >
           Contact
-        </a>
+        </Link>
       </nav>
 
       <nav>
         <div className="grid grid-flow-col gap-6">
-          {/* GitHub Icon - Pinned to your profile interests */}
           <a
-            href="https://github.com"
+            href="https://github.com/Devendra6969"
             target="_blank"
             rel="noreferrer"
             className="hover:scale-125 transition-transform hover:text-white"
@@ -45,9 +51,8 @@ function FooterOne() {
             </svg>
           </a>
 
-          {/* LinkedIn Icon */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/devendrasingh100/"
             target="_blank"
             rel="noreferrer"
             className="hover:scale-125 transition-transform hover:text-blue-500"
