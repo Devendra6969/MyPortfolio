@@ -1,73 +1,50 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router"; // Using 'react-router' as requested
+import { NavLink } from "react-router"; // React Router v7
 
 function Navbar() {
-  // 1. LOGIC: Define state and functions INSIDE the component
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleEmail = () => {
-    window.location.href = "mailto:ds493133@gmail.com?subject=Hello&body=Hi";
+
+    window.location.href =
+      "mailto:ds493133@gmail.com?subject=Inquiry&body=Hi Devendra,";
   };
 
-  const closeMobileMenu = () => {
-    const elem = document.activeElement;
-    if (elem) {
-      elem.blur(); // Unfocus the dropdown to close it
-    }
-    setIsMobileMenuOpen(false);
-  };
-
-  // 2. DATA: Define your navigation links
   const navLinks = [
-    { name: "Home", path: "/" }, // Changed to "/" to match your main.jsx router
+    { name: "Home", path: "/" },
     { name: "About", path: "/About" },
     { name: "Projects", path: "/Projects" },
     { name: "Skills", path: "/Skills" },
     { name: "Contact", path: "/Contact" },
   ];
 
-  // 3. RENDER: The complete JSX structure
   return (
-    <div className="navbar fixed top-0 z-50 w-full bg-black/30 backdrop-blur-lg border-b border-white/10 px-4 md:px-8 transition-all duration-300">
-      {/* --- LEFT SIDE: Mobile Menu & Logo --- */}
-      <div className="navbar-start">
-        {/* Mobile Dropdown */}
-        <div className="dropdown">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost lg:hidden text-white"
+    <nav className="fixed top-0 z-50 w-full bg-[#0a0a0a]/80 backdrop-blur-md border-b border-zinc-800 px-6 py-4 selection:bg-white selection:text-black">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* --- LOGO: Brutalist Style --- */}
+        <div className="flex items-center gap-4">
+          <NavLink
+            to="/"
+            className="text-xl font-bold tracking-tighter text-white hover:opacity-70 transition-opacity"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
+            Devendra Singh
+            <span className="text-zinc-500 font-mono text-xs ml-2">.v7</span>
+          </NavLink>
+        </div>
 
-          {/* Mobile Menu Items */}
-          <ul
-            tabIndex={0}
-            className="menu menu-lg dropdown-content mt-3 z-1 p-2 shadow-2xl bg-gray-900 border border-white/10 rounded-box w-64 text-white"
-          >
+
+        <div className="hidden lg:flex items-center bg-zinc-900 border border-zinc-800 p-1">
+          <ul className="flex">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <NavLink
                   to={link.path}
-                  onClick={closeMobileMenu}
                   className={({ isActive }) =>
-                    isActive
-                      ? "text-cyan-400 font-bold bg-white/5"
-                      : "hover:text-cyan-300"
+                    `px-5 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-all duration-200 ${
+                      isActive
+                        ? "bg-white text-black font-bold"
+                        : "text-zinc-500 hover:text-white hover:bg-zinc-800"
+                    }`
                   }
                 >
                   {link.name}
@@ -77,47 +54,79 @@ function Navbar() {
           </ul>
         </div>
 
-        {/* Logo */}
-        <NavLink
-          to="/"
-          className="btn btn-ghost text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 hover:scale-105 transition-transform"
-        >
-          Devendra.
-        </NavLink>
+
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex flex-col items-end mr-4">
+            <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+              Availability
+            </span>
+            <span className="text-[10px] font-mono text-green-500 uppercase tracking-widest flex items-center gap-1">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+              Ready to Hire
+            </span>
+          </div>
+
+          <button
+            onClick={handleEmail}
+            className="px-6 py-2.5 bg-white text-black font-bold uppercase text-[11px] tracking-widest hover:bg-zinc-200 transition-colors rounded-none shadow-[4px_4px_0px_rgba(82,82,91,0.5)] active:translate-x-[2] active:translate-y-[2] active:shadow-none"
+          >
+            Hire Me
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden text-white p-2 border border-zinc-800"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* --- CENTER: DESKTOP MENU --- */}
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-6 text-base font-medium text-gray-300">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <NavLink
-                to={link.path}
-                className={({ isActive }) =>
-                  `hover:text-white hover:bg-white/5 transition-colors duration-300 ${
-                    isActive
-                      ? "text-cyan-400 font-bold border-b-2 border-cyan-400 rounded-none pb-1"
-                      : ""
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* --- RIGHT: CTA BUTTON --- */}
-      <div className="navbar-end">
-        <button
-          onClick={handleEmail}
-          className="relative px-6 py-2.5 font-bold text-white rounded-full bg-linear-to-r from-cyan-600 to-blue-600 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all duration-300"
-        >
-          Hire Me
-        </button>
-      </div>
-    </div>
+      {/* --- MOBILE OVERLAY: Full screen minimalist --- */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-black z-50 flex flex-col p-8 lg:hidden">
+          <div className="flex justify-end">
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white text-3xl font-light"
+            >
+              &times;
+            </button>
+          </div>
+          <ul className="mt-12 space-y-8">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <NavLink
+                  to={link.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-4xl font-bold text-white hover:italic transition-all"
+                >
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-auto border-t border-zinc-800 pt-8">
+            <p className="font-mono text-zinc-500 text-xs uppercase tracking-widest">
+              VIT Bhopal // 2026
+            </p>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
 

@@ -1,45 +1,47 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router"; // React Router v7
 
 function FooterOne() {
   return (
-    <footer
-      className="footer footer-center p-10 text-slate-300 border-t border-white/10"
-      style={{
-        background:
-          "radial-gradient(125% 125% at 50% 0%, #000000 70%, #010133 100%)",
-      }}
-    >
-      <nav className="grid grid-flow-col gap-6 font-mono text-sm tracking-widest uppercase">
-        <Link
-          className="link link-hover hover:text-blue-400 transition-colors"
-          to="/Projects"
-        >
-          Projects
-        </Link>
-        <Link className="link link-hover hover:text-blue-400 transition-colors">
-          Skills
-        </Link>
-        <Link
-          to="/Contact"
-          className="link link-hover hover:text-blue-400 transition-colors"
-        >
-          Contact
-        </Link>
-      </nav>
+    <footer className="relative w-full bg-[#0a0a0a] border-t border-zinc-800 text-zinc-500 font-mono text-sm overflow-hidden">
+      {/* Background: Signature Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40_40] pointer-events-none"></div>
 
-      <nav>
-        <div className="grid grid-flow-col gap-6">
+      <div className="relative z-10 container mx-auto px-6 py-12 flex flex-col items-center">
+        {/* Navigation Links */}
+        <nav className="flex gap-8 mb-8 text-[11px] uppercase tracking-[0.2em]">
+          <Link
+            to="/projects"
+            className="hover:text-white transition-colors duration-300"
+          >
+            Projects
+          </Link>
+          <Link
+            to="/skills"
+            className="hover:text-white transition-colors duration-300"
+          >
+            Skills
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:text-white transition-colors duration-300"
+          >
+            Contact
+          </Link>
+        </nav>
+
+        {/* Social Icons */}
+        <div className="flex gap-6 mb-12">
           <a
             href="https://github.com/Devendra6969"
             target="_blank"
             rel="noreferrer"
-            className="hover:scale-125 transition-transform hover:text-white"
+            className="p-3 bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-800 hover:border-zinc-600 transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -55,12 +57,12 @@ function FooterOne() {
             href="https://www.linkedin.com/in/devendrasingh100/"
             target="_blank"
             rel="noreferrer"
-            className="hover:scale-125 transition-transform hover:text-blue-500"
+            className="p-3 bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-800 hover:border-zinc-600 transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -74,14 +76,19 @@ function FooterOne() {
             </svg>
           </a>
         </div>
-      </nav>
 
-      <aside className="opacity-50 text-xs">
-        <p>
-          Copyright © {new Date().getFullYear()} — Designed & Built by
-          <span className="text-blue-500 font-bold ml-1">Devendra Singh</span>
-        </p>
-      </aside>
+        {/* Footer Bottom / Status Bar */}
+        <div className="w-full max-w-2xl border-t border-zinc-800 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-zinc-600 gap-4">
+          <p>© {new Date().getFullYear()} Devendra Singh</p>
+
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            <span>All Systems Normal</span>
+          </div>
+
+          <p>Built in React / Tailwind v4</p>
+        </div>
+      </div>
     </footer>
   );
 }
