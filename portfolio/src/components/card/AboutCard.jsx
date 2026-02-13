@@ -60,7 +60,7 @@ export default function AboutCard() {
               Devendra Singh
             </h1>
             <p className="text-sm font-mono text-zinc-400 mb-8 lowercase opacity-80">
-              /deɪveɪndrə/ • full-stack developer • India
+              /Devendra/ • full-stack developer • India
             </p>
           </header>
 

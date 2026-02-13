@@ -27,7 +27,7 @@ function Navbar() {
             to="/"
             className="text-xl font-bold tracking-tighter text-white hover:opacity-70 transition-opacity"
           >
-            Devendra Singh
+            Devendra
             <span className="text-zinc-500 font-mono text-xs ml-2">.v7</span>
           </NavLink>
         </div>

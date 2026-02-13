@@ -29,7 +29,7 @@ function About() {
             </div>
 
             <p className="text-zinc-500 font-mono text-lg lowercase">
-              /deɪveɪndrə/ • engineer • product builder
+              /Devendra/ • engineer • product builder
             </p>
           </header>
 
@@ -40,7 +40,7 @@ function About() {
                 <p>
                   I describe myself as a{" "}
                   <strong className="text-zinc-200">
-                    part-time developer and full-time coder
+                    part-time developer and full-time full-time problem solver.
                   </strong>
                   . I love solving my daily-life tech problems through code and
                   genuinely enjoy having fun while building things. I’ve created
