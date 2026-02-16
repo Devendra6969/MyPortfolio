@@ -38,20 +38,16 @@ function About() {
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-6 text-zinc-400 text-xl leading-relaxed border-l border-zinc-800 pl-8">
                 <p>
-                  I describe myself as a{" "}
+                  I consider myself a
                   <strong className="text-zinc-200">
-                    part-time developer and full-time full-time problem solver.
+                    part-time developer and full-time problem solver
                   </strong>
-                  . I love solving my daily-life tech problems through code and
-                  genuinely enjoy having fun while building things. I’ve created
-                  a personal{" "}
-                  <strong className="text-zinc-200">
-                    Todo app with a Pomodoro timer
-                  </strong>{" "}
-                  to stay productive. I’ve also participated in multiple
-                  hackathons, been an active member in college tech fests,
-                  regularly read tech blogs, and I’m now starting to write my
-                  own.
+                  , driven by a passion for building practical and scalable
+                  solutions. I enjoy translating real-world challenges into
+                  efficient technical implementations. I have actively
+                  participated in multiple hackathons, contributed to college
+                  technical fests, regularly engage with industry blogs, and am
+                  currently sharing my own technical insights through writing.
                 </p>
 
                 <p>
